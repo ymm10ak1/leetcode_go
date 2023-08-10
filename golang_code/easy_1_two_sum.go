@@ -7,24 +7,17 @@
 package golangcode
 
 // @lc code=start
+// 
+//lint:ignore U1000 //
 func twoSum(nums []int, target int) []int {
-    // m := make(map[int]int) 
-	ans := []int{}
-	check := false
 	for i := 0; i < len(nums)-1; i++ {
 		for j := i+1; j < len(nums); j++ {
 			if nums[i] + nums[j] == target {
-				ans = append(ans, i)
-				ans = append(ans, j)
-				check = true
-				break
+				return []int{i, j}
 			}
 		}
-		if check {
-			break
-		}
 	}
-	return ans
+	return []int{}
 }
 // @lc code=end
 
